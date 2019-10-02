@@ -28,7 +28,7 @@
 
                             </li>
                             <li><a href="coupons.html">COUPONS & DEALS</a></li>
-                            <li><a href="shops.html">STORS</a></li>
+                            <li><a href="{{ route('stores') }}">STORS</a></li>
                             <li><a href="categories.html">CATEGORIES</a></li>
 
                             <li><a href="news.html">BLOG</a></li>
@@ -75,7 +75,7 @@
                     <input type="text" placeholder="Search For Coupons... " />
                     <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </div>
-                <a href="#featured" class="mouse-icon"><img src="assets/images/mouse-icon.png" alt="mouse-icon" /></a>
+                <a href="#featured" class="mouse-icon"><img src="{{URL::asset('images/mouse-icon.png')}}" alt="mouse-icon" /></a>
             </div>
         </div>
     </div>

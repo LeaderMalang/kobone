@@ -26,12 +26,13 @@ class StoresImport implements ToModel
             'heading_1'=>$row[2],
             'url'=>$row[5],
             'slug'=>$row[7],
-            'image'=>'stores/September2019/'.$this->downaloadImage($row[3]),
+            'image'=>'stores/September2019/'.$this->downaloadImage($row[3],$row[1]),
             'status'=> $status,
             'total_coupon_used_times'=>(int) $row[4]
         ]);
     }
-    public function downaloadImage($url){
+    public function downaloadImage($url,$name){
+
         if($url==''){
             return '';
         }else {
@@ -44,9 +45,15 @@ class StoresImport implements ToModel
                 ),
             );
             if($urls[0]){
+                if($urls[0]=='http://localhost/cupons/wp-content/uploads/2019/09/Shhhh...-Listen-Do-You-Want-Savings-While-Online-Shopping.jpg'){
+                    die($name);
+                }
                 $contents = file_get_contents($urls[0],false, stream_context_create($arrContextOptions));
                 $name = substr($urls[0], strrpos($urls[0], '/') + 1);
             }else{
+                if($url=='http://localhost/cupons/wp-content/uploads/2019/09/Shhhh...-Listen-Do-You-Want-Savings-While-Online-Shopping.jpg'){
+                    die($name);
+                }
                 $contents = file_get_contents($url,false, stream_context_create($arrContextOptions));
                 $name = substr($url, strrpos($url, '/') + 1);
             }

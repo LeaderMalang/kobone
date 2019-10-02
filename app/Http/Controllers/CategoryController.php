@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         //die(storage_path('Store-Categories-Export-2019-September-27-2002.xlsx'));
 
-        Excel::import(new CategoriesImport, storage_path('Store-Categories-Export-2019-September-27-2002.xlsx'));
+        Excel::import(new CategoriesImport, storage_path('post-categories.xlsx'));
 
         return redirect('/')->with('success', 'All good!');
     }

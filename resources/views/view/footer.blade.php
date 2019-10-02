@@ -84,5 +84,5 @@
     <!--  Custom Theme JavaScript  -->
     <script src="{{URL::asset('js/custom.js')}}"></script>
     <!-- owl carousel -->
-    <script src="{{URL::asset('owl-carousel/owl.carousel.js')}}"></script>
+    <script src="{{URL::asset('css/owl.carousel.js')}}"></script>
 
